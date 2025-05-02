@@ -1,0 +1,1 @@
+this is enough to make a point and click puzzle game. do everything with animations
