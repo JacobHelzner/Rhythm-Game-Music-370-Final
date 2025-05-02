@@ -174,8 +174,18 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void ResetVelocity()
+    {
+        // Set X and Z velocity components to zero while keeping Y velocity unchanged
+        rb.velocity = new Vector3(0, rb.velocity.y, 0);
+
+        // Set all angular velocity components to zero
+        rb.angularVelocity = Vector3.zero;
+    }
+
     void FixedUpdate()
     {
+        ResetVelocity();
         HoverPhysics();
         Movement();
     }

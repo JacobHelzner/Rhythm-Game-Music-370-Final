@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{100AE41E-9853-00A1-0814-C759729749EB}</ProjectGuid>
+    <ProjectGuid>{44E1583F-FAE1-5716-BA6C-DF03DBD252A5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -70,6 +70,7 @@
     <Compile Include="Assets\Old Assets\Event\Audio\PlaySFX.cs" />
     <Compile Include="Assets\Old Assets\Event\Event.cs" />
     <Compile Include="Assets\Old Assets\Audio\BGMPlayer.cs" />
+    <Compile Include="Assets\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Old Assets\Generic\TextureRotate1.cs" />
     <Compile Include="Assets\Old Assets\Generic\Movement\setYToTarget.cs" />
     <Compile Include="Assets\Old Assets\Event\Data\LoadData.cs" />
@@ -97,7 +98,7 @@
     <Compile Include="Assets\Old Assets\Event\Data\SaveData.cs" />
     <Compile Include="Assets\CameraFX\SlowShutter\SlowShutter.cs" />
     <Compile Include="Assets\Old Assets\Audio\SFXPlayer.cs" />
-    <Compile Include="Assets\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Track\RoadScroller.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\CameraFX\DitherEffect\Dither.shader" />
