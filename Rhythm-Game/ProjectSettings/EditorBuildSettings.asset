@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Old Assets/Scenes/Start.unity
     guid: 3606448d6dbf4aa429533d5472fab982
   - enabled: 1
-    path: Assets/Models/player/Animations/Level 1.unity
+    path: Assets/Player/player/Animations/Level 1.unity
     guid: 52fcdb918ef901645b506aa68ca472b3
   m_configObjects: {}

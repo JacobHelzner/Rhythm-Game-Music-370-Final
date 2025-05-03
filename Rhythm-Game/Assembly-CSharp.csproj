@@ -98,7 +98,9 @@
     <Compile Include="Assets\Old Assets\Event\Data\SaveData.cs" />
     <Compile Include="Assets\CameraFX\SlowShutter\SlowShutter.cs" />
     <Compile Include="Assets\Old Assets\Audio\SFXPlayer.cs" />
-    <Compile Include="Assets\Track\RoadScroller.cs" />
+    <Compile Include="Assets\Buttons\Button.cs" />
+    <Compile Include="Assets\Player\DrumStick.cs" />
+    <Compile Include="Assets\Track\TrackMaster.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\CameraFX\DitherEffect\Dither.shader" />

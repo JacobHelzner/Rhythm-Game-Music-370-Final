@@ -9,6 +9,11 @@ TagManager:
   - Bullet
   - PlayerBullet
   - KillPlayer
+  - BlueStick
+  - RedStick
+  - Ground
+  - BlueButton
+  - RedButton
   layers:
   - Default
   - TransparentFX
@@ -16,7 +21,7 @@ TagManager:
   - 2D
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 

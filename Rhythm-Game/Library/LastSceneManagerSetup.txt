@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Models/player/Animations/Level 1.unity
+- path: Assets/Player/player/Animations/Level 1.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

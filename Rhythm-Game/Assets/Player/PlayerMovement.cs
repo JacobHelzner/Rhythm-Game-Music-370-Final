@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     public Animator rightArm;
     private bool rightArmIsPlayingTemporary = false;
 
+    public LayerMask groundLayer;
+
     public float armsAnimDuration = 0.5f;
     public float armsAnimAttackSpeed = 0.1f;
     public float armsAnimReleaseSpeed = 0.2f;
@@ -26,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
 
     public float moveSpeed = 5f; // Movement speed
+
+    public DrumStick redStick;
+    public DrumStick blueStick;
 
     void Start()
     {
@@ -127,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
     void HoverPhysics()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastDistance))
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastDistance, groundLayer))
         {
             float distance = hit.distance;  // Distance from origin to collision point
             float forceMultiplier = Mathf.Clamp01(1f - (distance / raycastDistance)); // Scales force as distance decreases
