@@ -70,6 +70,7 @@
     <Compile Include="Assets\Old Assets\Event\Audio\PlaySFX.cs" />
     <Compile Include="Assets\Old Assets\Event\Event.cs" />
     <Compile Include="Assets\Old Assets\Audio\BGMPlayer.cs" />
+    <Compile Include="Assets\Player\DrumStick.cs" />
     <Compile Include="Assets\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Old Assets\Generic\TextureRotate1.cs" />
     <Compile Include="Assets\Old Assets\Generic\Movement\setYToTarget.cs" />
@@ -92,15 +93,14 @@
     <Compile Include="Assets\Old Assets\Event\Data\SetData.cs" />
     <Compile Include="Assets\Old Assets\Generic\Skeleton.cs" />
     <Compile Include="Assets\Old Assets\Generic\Movement\FollowTargetY.cs" />
+    <Compile Include="Assets\Buttons\Button.cs" />
     <Compile Include="Assets\Old Assets\Event\Time\Wait.cs" />
     <Compile Include="Assets\Manager\GameManager.cs" />
     <Compile Include="Assets\Old Assets\Event\Logic\InputJunction.cs" />
     <Compile Include="Assets\Old Assets\Event\Data\SaveData.cs" />
+    <Compile Include="Assets\Track\TrackMaster.cs" />
     <Compile Include="Assets\CameraFX\SlowShutter\SlowShutter.cs" />
     <Compile Include="Assets\Old Assets\Audio\SFXPlayer.cs" />
-    <Compile Include="Assets\Buttons\Button.cs" />
-    <Compile Include="Assets\Player\DrumStick.cs" />
-    <Compile Include="Assets\Track\TrackMaster.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\CameraFX\DitherEffect\Dither.shader" />

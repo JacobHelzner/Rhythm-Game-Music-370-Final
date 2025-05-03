@@ -7,6 +7,7 @@ public class TrackMaster : MonoBehaviour
     public GameObject LeftTurn;
     public GameObject RightTurn;
     public GameObject Straight;
+    public GameObject InitialTrack;
 
     public float timeInterval = 2f;  // Default time interval
 
@@ -16,6 +17,7 @@ public class TrackMaster : MonoBehaviour
     private Quaternion startRotationLeft;
 
     public bool justTurned = true;
+
 
     IEnumerator MoveStraight(GameObject obj, float interval)
     {
@@ -44,6 +46,7 @@ public class TrackMaster : MonoBehaviour
 
         Vector3 endPosition2 = startPositionRight - new Vector3(0, 0, 139.5515f);
         justTurned = true;
+        InitialTrack.SetActive(false);
         MakeNextMovement();
 
         yield return StartCoroutine(InterpolatePosition(obj, startPositionRight, endPosition2, interval));
@@ -63,6 +66,7 @@ public class TrackMaster : MonoBehaviour
 
         Vector3 endPosition2 = startPositionLeft - new Vector3(0, 0, 139.5515f);
         justTurned = true;
+        InitialTrack.SetActive(false);
         MakeNextMovement();
 
         yield return StartCoroutine(InterpolatePosition(obj, startPositionLeft, endPosition2, interval));
@@ -110,6 +114,7 @@ public class TrackMaster : MonoBehaviour
         StartCoroutine(MoveStraight(Straight, timeInterval));
     }
 
+
     void MakeNextMovement()
     {
         if (justTurned)
@@ -138,6 +143,11 @@ public class TrackMaster : MonoBehaviour
         startRotationRight = RightTurn.transform.rotation;
         startPositionLeft = LeftTurn.transform.position;
         startRotationLeft = LeftTurn.transform.rotation;
+
+        LeftTurn.transform.position = startPositionLeft - new Vector3(0, 0, 500f);
+        RightTurn.transform.position = startPositionRight - new Vector3(0, 0, 500f);
+        justTurned = true;
+        InitialTrack.SetActive(true);
         MakeNextMovement();
     }
 
