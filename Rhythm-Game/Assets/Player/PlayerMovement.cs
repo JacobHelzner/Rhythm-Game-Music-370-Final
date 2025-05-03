@@ -48,17 +48,17 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!Input.GetKey(leftKey) && !Input.GetKey(rightKey))
             {
-                animator.CrossFade("MoveForward", 0.1f);
+                animator.CrossFade("MoveBackward", 0.1f);
             }
             else
             {
                 if (Input.GetKey(rightKey))
                 {
-                    animator.CrossFade("MoveFR", 0.1f);
+                    animator.CrossFade("MoveBL", 0.1f);
                 }
                 else
                 {
-                    animator.CrossFade("MoveFL", 0.1f);
+                    animator.CrossFade("MoveBR", 0.1f);
                 }
             }
         }
@@ -66,27 +66,27 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!Input.GetKey(leftKey) && !Input.GetKey(rightKey))
             {
-                animator.CrossFade("MoveBackward", 0.1f);
+                animator.CrossFade("MoveForward", 0.1f);
             }
             else
             {
                 if (Input.GetKey(rightKey))
                 {
-                    animator.CrossFade("MoveBR", 0.1f);
+                    animator.CrossFade("MoveFL", 0.1f);
                 }
                 else
                 {
-                    animator.CrossFade("MoveBL", 0.1f);
+                    animator.CrossFade("MoveFR", 0.1f);
                 }
             }
         }
         else if (Input.GetKey(leftKey))
         {
-            animator.CrossFade("MoveLeft", 0.1f);
+            animator.CrossFade("MoveRight", 0.1f);
         }
         else if (Input.GetKey(rightKey))
         {
-            animator.CrossFade("MoveRight", 0.1f);
+            animator.CrossFade("MoveLeft", 0.1f);
         }
         else
         {

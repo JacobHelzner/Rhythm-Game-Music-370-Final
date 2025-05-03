@@ -98,9 +98,12 @@
     <Compile Include="Assets\Manager\GameManager.cs" />
     <Compile Include="Assets\Old Assets\Event\Logic\InputJunction.cs" />
     <Compile Include="Assets\Old Assets\Event\Data\SaveData.cs" />
-    <Compile Include="Assets\Track\TrackMaster.cs" />
+    <Compile Include="Assets\Track\Old\TrackMaster.cs" />
     <Compile Include="Assets\CameraFX\SlowShutter\SlowShutter.cs" />
     <Compile Include="Assets\Old Assets\Audio\SFXPlayer.cs" />
+    <Compile Include="Assets\Track\TrackSegment.cs" />
+    <Compile Include="Assets\Track\Track.cs" />
+    <Compile Include="Assets\Track\Chart.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\CameraFX\DitherEffect\Dither.shader" />
