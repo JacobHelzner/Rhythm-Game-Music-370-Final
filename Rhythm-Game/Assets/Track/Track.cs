@@ -19,6 +19,10 @@ public class Track : MonoBehaviour
     private Vector2 targetPosition;
     private float timeElapsed;
 
+    public bool playingChart = false;
+
+    public Event endEvent;
+
     void PrepareChart(Chart newChart)
     {
         currentChart = newChart;
@@ -26,10 +30,22 @@ public class Track : MonoBehaviour
         currentBeat = 0;
     }
 
-    void Start()
+    IEnumerator DelayStartPrefabs()
     {
-        PrepareChart(initialChart);
+        float time = 0f;
+        while (time < 0.5f)
+        {
+            time += Time.deltaTime;
+            yield return null;
+        }
         StartCoroutine(SpawnPrefabRoutine());
+    }
+
+    public void Initialize(Chart newChart)
+    {
+        playingChart = false;
+        PrepareChart(newChart);
+        StartCoroutine(DelayStartPrefabs());
         SetNewTargetPosition();
     }
 
@@ -70,7 +86,7 @@ public class Track : MonoBehaviour
             TrackSegment newSegment = Instantiate(prefab, transform.position, Quaternion.LookRotation(transform.position - origin.position));
             newSegment.target = origin;
             newSegment.moveDuration = (2f / 0.1f) * beatTimeInSeconds;
-            if (currentChart == null)
+            if (currentChart == null || playingChart == false)
             {
                 newSegment.PrepareSegment(new List<float> { -1f, -1f });
             }
@@ -80,7 +96,8 @@ public class Track : MonoBehaviour
                 currentBeat++;
                 if (currentBeat > (currentChart.beats.Length - 1))
                 {
-                    currentBeat = 0;
+                    playingChart = false;
+                    endEvent.Execute();
                 }
             }
             yield return new WaitForSeconds(beatTimeInSeconds);

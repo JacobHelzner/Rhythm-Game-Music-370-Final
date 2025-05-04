@@ -33,7 +33,7 @@ public class TrackSegment : MonoBehaviour
 
     public Transform target;
     public float moveDuration = 1f; // Duration to reach target
-    public float movePastDuration = 1f;
+    public float movePastDuration = 1.5f;
     [SerializeField]
     public Vector3 lastVelocity;
 
