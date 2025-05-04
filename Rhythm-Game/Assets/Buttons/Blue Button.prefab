@@ -385,4 +385,6 @@ MonoBehaviour:
   hit: {fileID: 3318065413406923264}
   hasSwitched: 0
   stickTag: BlueStick
+  wrongStickTag: RedStick
   hitFX: {fileID: 4907715067934689875, guid: 3416cb7bce1345149bfdb2bc2105b443, type: 3}
+  wrongFX: {fileID: 4907715067934689875, guid: cd47327025d213b4e93cd59f007a6d1f, type: 3}

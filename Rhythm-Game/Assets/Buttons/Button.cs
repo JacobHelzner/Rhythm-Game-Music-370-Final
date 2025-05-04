@@ -8,7 +8,9 @@ public class Button : MonoBehaviour
     public GameObject hit;
     public bool hasSwitched = false;
     public string stickTag = "BlueStick";
+    public string wrongStickTag;
     public GameObject hitFX;
+    public GameObject wrongFX;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,6 +21,15 @@ public class Button : MonoBehaviour
             hasSwitched = true;
             active.SetActive(false);
             hit.SetActive(true);
+        }
+        else if (other.CompareTag(wrongStickTag))
+        {
+            DrumStick stick = other.gameObject.GetComponent<DrumStick>();
+            if (stick.cooldown <= 0f)
+            {
+                Instantiate(wrongFX, transform.position + Vector3.up * 2, Quaternion.identity);
+                other.gameObject.GetComponent<DrumStick>().Cooldown();
+            }
         }
     }
     // Start is called before the first frame update
