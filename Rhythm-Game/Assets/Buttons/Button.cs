@@ -8,11 +8,13 @@ public class Button : MonoBehaviour
     public GameObject hit;
     public bool hasSwitched = false;
     public string stickTag = "BlueStick";
+    public GameObject hitFX;
 
     private void OnTriggerEnter(Collider other)
     {
         if (!hasSwitched && other.CompareTag(stickTag))
         {
+            Instantiate(hitFX, transform.position + Vector3.up*2, Quaternion.identity);
             other.gameObject.GetComponent<DrumStick>().hitCount++;
             hasSwitched = true;
             active.SetActive(false);

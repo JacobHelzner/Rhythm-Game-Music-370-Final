@@ -77,6 +77,7 @@
     <Compile Include="Assets\Old Assets\Event\Data\LoadData.cs" />
     <Compile Include="Assets\Old Assets\Level\Enemy\Tower\TowerEnemy.cs" />
     <Compile Include="Assets\Old Assets\Generic\Movement\FollowTarget.cs" />
+    <Compile Include="Assets\Track\TrackSegment.cs" />
     <Compile Include="Assets\Old Assets\Event\Logic\DataTestJunction.cs" />
     <Compile Include="Assets\Old Assets\Event\Audio\PlayBGM.cs" />
     <Compile Include="Assets\Old Assets\Level\Player\Ship.cs" />
@@ -91,19 +92,18 @@
     <Compile Include="Assets\Old Assets\Event\Scene\SwitchScene.cs" />
     <Compile Include="Assets\Old Assets\Event\Animation\SetAnimatorState.cs" />
     <Compile Include="Assets\Old Assets\Event\Data\SetData.cs" />
+    <Compile Include="Assets\Track\Chart.cs" />
     <Compile Include="Assets\Old Assets\Generic\Skeleton.cs" />
     <Compile Include="Assets\Old Assets\Generic\Movement\FollowTargetY.cs" />
     <Compile Include="Assets\Buttons\Button.cs" />
     <Compile Include="Assets\Old Assets\Event\Time\Wait.cs" />
     <Compile Include="Assets\Manager\GameManager.cs" />
     <Compile Include="Assets\Old Assets\Event\Logic\InputJunction.cs" />
+    <Compile Include="Assets\Track\Track.cs" />
     <Compile Include="Assets\Old Assets\Event\Data\SaveData.cs" />
     <Compile Include="Assets\Track\Old\TrackMaster.cs" />
     <Compile Include="Assets\CameraFX\SlowShutter\SlowShutter.cs" />
     <Compile Include="Assets\Old Assets\Audio\SFXPlayer.cs" />
-    <Compile Include="Assets\Track\TrackSegment.cs" />
-    <Compile Include="Assets\Track\Track.cs" />
-    <Compile Include="Assets\Track\Chart.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\CameraFX\DitherEffect\Dither.shader" />

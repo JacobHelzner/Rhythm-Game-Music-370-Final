@@ -300,7 +300,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: a71d23c1171956d46ae9edab7b939720, type: 2}
   - {fileID: 2100000, guid: 8509b8fdd09a03e40b177ce3c2a77d01, type: 2}
-  - {fileID: 2100000, guid: 043cbf6c8715a8c469ae66f54254b912, type: 2}
+  - {fileID: 2100000, guid: 5bfbcd08edd306942907948e4716e3d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -385,3 +385,4 @@ MonoBehaviour:
   hit: {fileID: 2354836528363948229}
   hasSwitched: 0
   stickTag: RedStick
+  hitFX: {fileID: 3859082274706627426, guid: 8dc5d6768a4571c4f8b08b4a995e5bcc, type: 3}
