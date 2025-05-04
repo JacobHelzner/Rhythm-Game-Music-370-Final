@@ -8,7 +8,7 @@ public class StartTrack : Event
     public Track track;
     public override void OnExecute()
     {
-        track.playingChart = true;
+        track.StartPlaying();
         Terminate();
     }
 }

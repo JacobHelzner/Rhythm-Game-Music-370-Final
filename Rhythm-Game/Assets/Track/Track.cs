@@ -22,12 +22,33 @@ public class Track : MonoBehaviour
     public bool playingChart = false;
 
     public Event endEvent;
+    public Event BGMEvent;
 
-    void PrepareChart(Chart newChart)
+    void PrepareChart(Chart newChart, Event newBGMEvent)
     {
         currentChart = newChart;
+        currentChart.BuildBeatsFromMeasures();
+        BGMEvent = newBGMEvent;
         beatTimeInSeconds = 60f / (currentChart.BPM * 4f);
         currentBeat = 0;
+    }
+
+    IEnumerator BeginBGM()
+    {
+        float time_max = (2f / 0.1f) * beatTimeInSeconds;
+        float time = 0;
+        while (time < time_max)
+        {
+            time += Time.deltaTime;
+            yield return null;
+        }
+        BGMEvent.Execute();
+    }
+
+    public void StartPlaying()
+    {
+        playingChart = true;
+        StartCoroutine(BeginBGM());
     }
 
     IEnumerator DelayStartPrefabs()
@@ -41,10 +62,10 @@ public class Track : MonoBehaviour
         StartCoroutine(SpawnPrefabRoutine());
     }
 
-    public void Initialize(Chart newChart)
+    public void Initialize(Chart newChart, Event newBGMEvent)
     {
         playingChart = false;
-        PrepareChart(newChart);
+        PrepareChart(newChart, newBGMEvent);
         StartCoroutine(DelayStartPrefabs());
         SetNewTargetPosition();
     }

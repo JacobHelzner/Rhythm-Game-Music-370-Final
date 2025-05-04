@@ -7,9 +7,10 @@ public class PrepareTrackWithChart : Event
 {
     public Track track;
     public Chart chart;
+    public Event BGMEvent;
     public override void OnExecute()
     {
-        track.Initialize(chart);
+        track.Initialize(chart, BGMEvent);
         Terminate();
     }
 }
