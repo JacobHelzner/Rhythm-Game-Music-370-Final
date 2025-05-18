@@ -76,6 +76,7 @@
     <Compile Include="Assets\Old Assets\Generic\Movement\setYToTarget.cs" />
     <Compile Include="Assets\Event\Data\LoadData.cs" />
     <Compile Include="Assets\Old Assets\Level\Enemy\Tower\TowerEnemy.cs" />
+    <Compile Include="Assets\Test+Debug\Testing\Metronome.cs" />
     <Compile Include="Assets\Event\Track\StartTrack.cs" />
     <Compile Include="Assets\Old Assets\Generic\Movement\FollowTarget.cs" />
     <Compile Include="Assets\Track\TrackSegment.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Assets\Track\Old\TrackMaster.cs" />
     <Compile Include="Assets\CameraFX\SlowShutter\SlowShutter.cs" />
     <Compile Include="Assets\Audio\SFXPlayer.cs" />
+    <Compile Include="Assets\tempoTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\CameraFX\DitherEffect\Dither.shader" />

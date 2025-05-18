@@ -14,6 +14,7 @@ TagManager:
   - Ground
   - BlueButton
   - RedButton
+  - TrackSegment
   layers:
   - Default
   - TransparentFX
