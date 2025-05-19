@@ -88,6 +88,7 @@
     <Compile Include="Assets\Event\Logic\RandomJunction.cs" />
     <Compile Include="Assets\Old Assets\Generic\Movement\FollowTargetNoRot.cs" />
     <Compile Include="Assets\Audio\SFXTimedDestroy.cs" />
+    <Compile Include="Assets\tempoTest.cs" />
     <Compile Include="Assets\Test+Debug\Debug\ClearLog.cs" />
     <Compile Include="Assets\Event\Sequence\EventSequence.cs" />
     <Compile Include="Assets\Old Assets\Player\PlayerController.cs" />
@@ -107,7 +108,6 @@
     <Compile Include="Assets\Track\Old\TrackMaster.cs" />
     <Compile Include="Assets\CameraFX\SlowShutter\SlowShutter.cs" />
     <Compile Include="Assets\Audio\SFXPlayer.cs" />
-    <Compile Include="Assets\tempoTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\CameraFX\DitherEffect\Dither.shader" />

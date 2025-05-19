@@ -9,7 +9,10 @@ public class LevelManager : MonoBehaviour
 
     public void StartLevel()
     {
-        start.Execute();
+        if (start)
+        {
+            start.Execute();
+        }
     }
     // Start is called before the first frame update
     void Start()

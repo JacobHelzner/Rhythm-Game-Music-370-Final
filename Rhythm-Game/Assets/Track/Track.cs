@@ -9,6 +9,7 @@ public class Track : MonoBehaviour
     public Vector2 maxBounds = new Vector2(5f, 5f);
     public float moveDuration = 1.5f; // Duration for moving between targets
     public TrackSegment prefab;
+    public Metronome metronome;
     public Transform origin;
     public float beatTimeInSeconds = 0.2f;
     Chart currentChart;
@@ -27,13 +28,13 @@ public class Track : MonoBehaviour
     public Event endEvent;
     public Event BGMEvent;
 
+    float segmentMoveDuration;
+
     void PrepareChart(Chart newChart, Event newBGMEvent)
     {
         currentChart = newChart;
         currentChart.BuildBeatsFromMeasures();
         BGMEvent = newBGMEvent;
-        beatTimeInSeconds = 60f / currentChart.BPM;
-        prefabSpawnTime = beatTimeInSeconds / 4;
         currentBeat = 0;
     }
 
@@ -68,8 +69,8 @@ public class Track : MonoBehaviour
 
     void Start()
     {
-        Application.targetFrameRate = 20;
-        prefabSpawnTime = -1f;
+        beatTimeInSeconds = 60f / metronome.BPM;
+        segmentMoveDuration = metronome.trackMoveDuration;
     }
 
     void SetNewTargetPosition()
@@ -96,6 +97,25 @@ public class Track : MonoBehaviour
             SetNewTargetPosition();
         }
     }
+    public void SpawnTrackSegmentAtPos(Vector3 position)
+    {
+        TrackSegment newSegment = Instantiate(prefab, position, Quaternion.LookRotation(position - origin.position));
+        newSegment.target = origin;
+        newSegment.moveDuration = beatTimeInSeconds * 5f;
+        if (currentChart == null || playingChart == false)
+        {
+            newSegment.PrepareSegment(new List<float> { -1f, -1f });
+        }
+        else
+        {
+            newSegment.PrepareSegment(currentChart.beats[currentBeat].buttonMap);
+            currentBeat++;
+            if (currentBeat > (currentChart.beats.Length - 1))
+            {
+                playingChart = false;
+            }
+        }
+    }
 
     public void SpawnTrackSegment()
     {
@@ -113,7 +133,6 @@ public class Track : MonoBehaviour
             if (currentBeat > (currentChart.beats.Length - 1))
             {
                 playingChart = false;
-                endEvent.Execute();
             }
         }
     }

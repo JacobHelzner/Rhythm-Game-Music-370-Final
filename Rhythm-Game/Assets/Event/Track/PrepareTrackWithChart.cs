@@ -11,6 +11,7 @@ public class PrepareTrackWithChart : Event
     public override void OnExecute()
     {
         track.Initialize(chart, BGMEvent);
+        track.StartPlaying();
         Terminate();
     }
 }
