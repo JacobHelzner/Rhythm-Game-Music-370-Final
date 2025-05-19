@@ -97,25 +97,6 @@ public class Track : MonoBehaviour
             SetNewTargetPosition();
         }
     }
-    public void SpawnTrackSegmentAtPos(Vector3 position)
-    {
-        TrackSegment newSegment = Instantiate(prefab, position, Quaternion.LookRotation(position - origin.position));
-        newSegment.target = origin;
-        newSegment.moveDuration = beatTimeInSeconds * 5f;
-        if (currentChart == null || playingChart == false)
-        {
-            newSegment.PrepareSegment(new List<float> { -1f, -1f });
-        }
-        else
-        {
-            newSegment.PrepareSegment(currentChart.beats[currentBeat].buttonMap);
-            currentBeat++;
-            if (currentBeat > (currentChart.beats.Length - 1))
-            {
-                playingChart = false;
-            }
-        }
-    }
 
     public void SpawnTrackSegment()
     {
@@ -124,11 +105,11 @@ public class Track : MonoBehaviour
         newSegment.moveDuration = beatTimeInSeconds * 5f;
         if (currentChart == null || playingChart == false)
         {
-            newSegment.PrepareSegment(new List<float> { -1f, -1f });
+            newSegment.PrepareSegment(new List<float> { -1f, -1f }, null);
         }
         else
         {
-            newSegment.PrepareSegment(currentChart.beats[currentBeat].buttonMap);
+            newSegment.PrepareSegment(currentChart.beats[currentBeat].buttonMap, currentChart.beats[currentBeat].beatEvent);
             currentBeat++;
             if (currentBeat > (currentChart.beats.Length - 1))
             {

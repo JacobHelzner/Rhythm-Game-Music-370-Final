@@ -4,33 +4,27 @@ using UnityEngine;
 
 public class tempoTest : MonoBehaviour
 {
-    public GameObject tempoIndicator;
-    bool tempoIndicatorActive = false;
-
-    public PlaySFX sound;
-    int beat = 0;
+    public Metronome metro;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("TrackSegment"))
         {
-            if (beat < 3)
+            TrackSegment ts = other.GetComponent<TrackSegment>();
+            int result = ts.hasMissedButtons();
+            if (result == 1)
             {
-                beat += 1;
+                metro.missed = true;
             }
-            else
+            else if (result == 3)
             {
-
-                sound.Execute();
-                tempoIndicatorActive = !tempoIndicatorActive;
-                tempoIndicator.SetActive(tempoIndicatorActive);
-                beat = 0;
+                metro.missed = false;
             }
         }
     }
     // Start is called before the first frame update
     void Start()
     {
-        beat = 0;
+
     }
 
     // Update is called once per frame

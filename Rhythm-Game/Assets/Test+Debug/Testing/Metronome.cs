@@ -12,17 +12,43 @@ public class Metronome : MonoBehaviour
     public TextMesh text;
 
     public GameObject debug_indicator;
-    public float score;
+    public int score;
     float beatTimeInSeconds;
     float time;
     bool activated;
+    public bool missed;
+    public Animator scoreAnimator;
+    public int streak;
+
+    public GameObject streakFX;
+
+    int scoreIncrement;
+
+    private IEnumerator ResetScoreAnimator()
+    {
+        // Wait for 2 frames
+        yield return null; // Wait for 1 frame
+        yield return null; // Wait for another frame
+
+        // Execute your function
+        scoreAnimator.SetBool("triggered", false);
+    }
     public void IncreaseScore()
     {
-        score++;
+        scoreAnimator.SetBool("triggered", true);
+        score += scoreIncrement;
+        if (!missed)
+        {
+            streak++;
+        }
+        StartCoroutine(ResetScoreAnimator());
     }
     // Start is called before the first frame update
     void Start()
     {
+        scoreIncrement = 1;
+        missed = false;
+        streak = 0;
         beatTimeInSeconds = 60f / (BPM * 4);
         time = beatTimeInSeconds;
         activated = false;
@@ -33,9 +59,28 @@ public class Metronome : MonoBehaviour
         }
     }
 
+    void HandleStreak()
+    {
+        if (missed)
+        {
+            streak = 0;
+        }
+        if (streak > 15)
+        {
+            streakFX.SetActive(true);
+            scoreIncrement = 2;
+        }
+        else
+        {
+            streakFX.SetActive(false);
+            scoreIncrement = 1;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
+        HandleStreak();
         int trueScore = (int)(score / 2);
         text.text = $"{trueScore}";
         if (time > 0)

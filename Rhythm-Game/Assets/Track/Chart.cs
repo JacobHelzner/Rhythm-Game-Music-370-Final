@@ -14,6 +14,7 @@ public class Measure
 public class Beat
 {
     public List<float> buttonMap;
+    public Event beatEvent;
 }
 
 public class Chart : MonoBehaviour

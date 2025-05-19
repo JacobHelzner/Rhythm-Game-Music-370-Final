@@ -32,12 +32,13 @@ public class PlayerMovement : MonoBehaviour
     public DrumStick redStick;
     public DrumStick blueStick;
 
+    public Metronome metro;
+
     void Start()
     {
         // Get the Animator component attached to the object
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
-
     }
 
     void Animate()

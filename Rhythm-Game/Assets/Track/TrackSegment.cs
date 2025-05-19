@@ -9,6 +9,30 @@ public class TrackSegment : MonoBehaviour
     public Transform root_1;
     public Transform root_2;
     public List<GameObject> buttons;
+    public int hasMissedButtons()
+    {
+        int activeButtons = 0;
+        foreach (GameObject button in buttons)
+        {
+            Button buttonScript = button.GetComponent<Button>();
+            if (button.activeSelf)
+            {
+                activeButtons += 1;
+                if (buttonScript.hasSwitched == false)
+                {
+                    return 1;
+                }
+            }
+        }
+        if (activeButtons == 0)
+        {
+            return 2;
+        }
+        else
+        {
+            return 3;
+        }
+    }
     public void SetButtons(List<float> offsets)
     {
         for (int i = 0; i < offsets.Count; i++)
@@ -68,9 +92,13 @@ public class TrackSegment : MonoBehaviour
         }
     }
 
-    public void PrepareSegment(List<float> offsets)
+    public void PrepareSegment(List<float> offsets, Event beatEvent)
     {
         SetButtons(offsets);
+        if (beatEvent != null)
+        {
+            beatEvent.Execute();
+        }
         StartCoroutine(MovePast());
     }
 
