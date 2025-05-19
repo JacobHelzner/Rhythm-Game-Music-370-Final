@@ -108,10 +108,17 @@
     <Compile Include="Assets\Track\Old\TrackMaster.cs" />
     <Compile Include="Assets\CameraFX\SlowShutter\SlowShutter.cs" />
     <Compile Include="Assets\Audio\SFXPlayer.cs" />
+    <Compile Include="Assets\Background\Background.cs" />
+    <Compile Include="Assets\Background\TunnelSegment.cs" />
+    <Compile Include="Assets\CameraFX\Blur\FrameStackBlur.cs" />
+    <Compile Include="Assets\Event\Background\TurnOnOffPulse.cs" />
+    <Compile Include="Assets\Event\Background\SetBackgroundColor.cs" />
+    <Compile Include="Assets\Event\Background\SetSparks.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\CameraFX\DitherEffect\Dither.shader" />
     <None Include="Assets\CameraFX\SimpleLUT\Readme.txt" />
+    <None Include="Assets\CameraFX\Blur\FrameStackBlur.shader" />
     <None Include="Assets\CameraFX\SimpleLUT\_HereVR Color Grading Demo\Readme - HVR Color Grading Demo.txt" />
     <None Include="Assets\CameraFX\SimpleLUT\Shader\SimpleLUT.shader" />
     <None Include="Assets\Event\note.txt" />

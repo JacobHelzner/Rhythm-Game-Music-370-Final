@@ -37,7 +37,7 @@ namespace DigitalRuby.SimpleLUT
         [Tooltip("Contrast")]
         public float Contrast = 0.0f;
 
-        [Range(0, 10)]
+        [Range(-10, 10)]
         [Tooltip("Sharpness")]
         public float Sharpness = 0.0f;
 

@@ -20,6 +20,10 @@ public class Metronome : MonoBehaviour
     public Animator scoreAnimator;
     public int streak;
 
+    public Animator CameraPulseAnimator;
+
+    public Animator LightPulseAnimator;
+
     public GameObject streakFX;
 
     int scoreIncrement;
