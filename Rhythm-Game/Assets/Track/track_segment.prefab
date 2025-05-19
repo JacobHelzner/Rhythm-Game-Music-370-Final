@@ -229,7 +229,7 @@ MonoBehaviour:
   buttons: []
   target: {fileID: 0}
   moveDuration: 2
-  movePastDuration: 1.2
+  movePastDuration: 2
   lastVelocity: {x: 0, y: 0, z: 0}
 --- !u!65 &7165126934378559644
 BoxCollider:
